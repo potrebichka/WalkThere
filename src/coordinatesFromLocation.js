@@ -12,4 +12,3 @@ export class CoordinatesFromAddress {
     }
 }
 
-// Yelp API key : DrJ_qvm_NNA-jMxTlTRxnx4OsLqblKK8NxcnBeUrdLoEmni6XC5MOJXMFdwztRcSabn45bMK9rgfo9F3GMDoNlkHHf31Vy_3AaYtI8e5h8q-6Y-_0yjbLneG6GHlXXYx
