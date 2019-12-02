@@ -2,6 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+<<<<<<< HEAD
+=======
+const Dotenv = require('dotenv-webpack');
+>>>>>>> e1ae862c4af5d730065a7a73d381ccf3cf72a103
 
 module.exports = {
   entry: './src/main.js',
@@ -20,7 +24,12 @@ module.exports = {
       title: 'DoctorLookup',
       template: './src/index.html',
       inject: 'body'
+<<<<<<< HEAD
     })
+=======
+    }),
+    new Dotenv()
+>>>>>>> e1ae862c4af5d730065a7a73d381ccf3cf72a103
   ],
   module: {
     rules: [

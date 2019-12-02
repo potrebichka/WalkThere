@@ -3,6 +3,10 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { CoordinatesFromAddress} from './coordinatesFromLocation';
+<<<<<<< HEAD
+=======
+import loadGoogleMapsApi from 'load-google-maps-api';
+>>>>>>> e1ae862c4af5d730065a7a73d381ccf3cf72a103
 
 $(function() {
     let lat, lon;
@@ -45,4 +49,8 @@ $(function() {
     });
 
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> e1ae862c4af5d730065a7a73d381ccf3cf72a103
