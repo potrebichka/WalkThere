@@ -69,14 +69,13 @@ $(function() {
         $("#results").empty();
         for (let i=0; i< list.length; i++) {
             const el = list[i];
-            console.log(el);
             $("#results").append(`<li>${displayElementOfList(el)}</li>`);
         }
-        $(".results").show();
+        $("#results").show();
     }
 
     function displayElementOfList(element) {
-        return `Name: ${element.name}`
+        return `${element.name}`
     }
 
     function displayMap(lat, lon, list) {
@@ -87,4 +86,8 @@ $(function() {
         $("#locationInput").addClass("goUpGroup");
         $("#attractionInput").addClass("goUpGroup");
     }
+
+    $(".resultBox").click(function(event) {
+        console.log(event.target);
+    })
 });
