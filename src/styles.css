@@ -33,6 +33,8 @@ li img {
 }
 #results {
     margin: 10px;
+    text-align: center;
+    list-style-position: inside;
 }
 
 .btn {
@@ -72,7 +74,10 @@ li img {
     display: none;
     position: relative;
     top: 20%;
+<<<<<<< HEAD
     background-color: rgba(118,108,108, 0.7);
+=======
+>>>>>>> d181a98cdeab029ff05b7bb31fd2e06c3aad7f8c
     width: 80%;
     left: 10%;
     padding: 10px;
@@ -97,4 +102,9 @@ li img {
 
 .info {
     display: none
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> d181a98cdeab029ff05b7bb31fd2e06c3aad7f8c
