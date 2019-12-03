@@ -51,6 +51,7 @@ $(function() {
         getListOfAttractions(lat,lon,place).then(function(response) {
             displayList(response);
             displayMap(lat, lon, response);
+
         })
     }
 
@@ -75,7 +76,7 @@ $(function() {
     }
 
     function displayElementOfList(element) {
-        return `<li>Name: ${element.name}</li>`
+        return `Name: ${element.name}`
     }
 
     function displayMap(lat, lon, list) {
