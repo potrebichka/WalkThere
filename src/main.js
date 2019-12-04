@@ -141,12 +141,14 @@ $(function() {
         
         firebase.auth()
           .createUserWithEmailAndPassword(data.email, passwords.password)
-          .then(function(user) {
+          .then(function() {
+              let user = firebase.auth().currentUser;
             return user.updateProfile({
               displayName: data.firstName + ' ' + data.lastName
             })
           })
-          .then(function(user){
+          .then(function(){
+            let user = firebase.auth().currentUser;
             //now user is needed to be logged in to save data
             auth = user;
             //now saving the profile data
