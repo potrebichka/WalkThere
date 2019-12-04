@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
 body {
     background-image: url(./img/background.jpg);
     background-attachment: fixed;
@@ -8,7 +14,7 @@ body {
     text-align: center;
     font-size: 50px;
     font-variant: small-caps;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 form label {
@@ -16,14 +22,28 @@ form label {
     font-size: 30px;
 }
 
+<<<<<<< HEAD
 /* form h2 {
     text-decoration: underline;
     text-align: center;
     margin-bottom: 20px;
 } */
+=======
+li {
+    color: aliceblue;
+    margin: 10px;
+    cursor: pointer
+}
+>>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
 
-.results {
-    display: none;
+li img {
+    width: 300px;
+}
+
+#results {
+    margin: 10px;
+    text-align: center;
+    list-style-position: inside;
 }
 
 /* #findDoctorByIssueForm, #findDoctorByNameForm, #findDoctorBySpecialityForm {
@@ -36,23 +56,55 @@ form label {
     font-size: 20px;
 }
 
+<<<<<<< HEAD
 /* ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     align-items: center;
     justify-content: center;
+=======
+
+.box {
+    background-color: rgba(118,108,108, 0.5);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-li {
-    margin: 20px;
+.map {
+    height: 35%;
+    width: 70%;
+    left: 15%;
+    top: 20%;
+>>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
+}
+
+.goUpForm {
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    width: 100%;
+}
+
+.goUpGroup {
+    display: inline-block;
+    width: 40%;
+}
+
+.resultBox {
+    display: none;
+    position: relative;
+    top: 20%;
+    width: 80%;
+    left: 10%;
     padding: 10px;
-    border: 1px solid black;
-    width: 400px;
-    background-color: #b3d9ff;
-    font-size: 20px;
+    margin-top: 5%;
 }
 
+<<<<<<< HEAD
 #specialitiesList {
     margin-bottom: 20px;
 } */
@@ -65,4 +117,31 @@ li {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+=======
+@media (max-width: 500px) {
+    .map {
+        top: 25%;
+    }
+
+    .resultBox {
+        top: 30%
+    }
+}
+
+@media (max-height: 850px) {
+    .map {
+        top: 35%;
+    }
+}
+
+.info {
+    display: none
+}
+
+#icon {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    border: 1px solid black;
+>>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
 }

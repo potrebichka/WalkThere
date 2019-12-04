@@ -3,26 +3,34 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { CoordinatesFromAddress} from './coordinatesFromLocation';
-import loadGoogleMapsApi from 'load-google-maps-api';
+import { Map } from './googleMaps';
+import {Attractions} from './yelp';
 
 $(function() {
-    let lat, lon;
+    let lat, lon, map;
 
     $("#findLocationForm").submit(function(event) {
         event.preventDefault();
+<<<<<<< HEAD
         const location = $("#userLocationInput").val();
+=======
+        const location = $("#userLocationInput").val();    
+        const place = $("#userAttractionInput").val();
+
+>>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
         if (!location) {
             if (navigator.geolocation) {
 
                 navigator.geolocation.getCurrentPosition(function(position) {
                     lat = position.coords.latitude;
                     lon=position.coords.longitude;
-                    console.log(lat, lon);
+                    display(lat, lon, place)
                 });
             } else {
                 //Seattle coords
                 lat = "47.608013";
                 lon = "-122.335167";
+                display(lat, lon, place);
             }
         } else {
             (async() => {
@@ -31,20 +39,71 @@ $(function() {
                     const response = await coordinatesFromLocation.getCoordinates(location);
                     lat = response.results[0].geometry.lat;
                     lon =  response.results[0].geometry.lng;
-                    console.log(lat, lon);
-
+                    display(lat, lon, place);
                 } catch(error) {
                     console.error("There was an error handling your request: " + error.message);
                     //Seattle coords
                     lat = "47.608013";
                     lon = "-122.335167";
-                    console.log(lat, lon);
+                    display(lat, lon, place);
                 }
-
             })();
         }
     });
+    
+    function display(lat, lon, place) {
+        getListOfAttractions(lat,lon,place).then(function(response) {
+            displayList(response);
+            displayMap(lat, lon, response);
 
+        })
+    }
+
+    async function getListOfAttractions(lat, lon, place) {
+        try {
+            let attractions = new Attractions();
+            let listOfAttractions = await attractions.getAttractions(lat, lon, place); 
+            return listOfAttractions;
+        } catch(error) {
+            console.error("There was an error handling your request: " + error.message);
+        }
+    }
+
+    function displayList(list) {
+        $(".resultBox").show();
+        $("#results").empty();
+        for (let i=0; i< list.length; i++) {
+            const el = list[i];
+            $("#results").append(`<li><button class='btn btn-secondary'>${displayElementOfList(el)}</button></li>`);
+        }
+    }
+
+    function displayElementOfList(element) {
+        return `${element.name} 
+        <div class='info'>
+            Address: ${element.address}<br>
+            Phone: ${element.phone}<br>
+            Rating: ${element.rating}<br>
+            <img src=${element.image} alt=${element.name}>
+        </div>`
+    }
+
+<<<<<<< HEAD
   });
 
 // });
+=======
+    function displayMap(lat, lon, list) {
+        $('.map').show();
+        map = new Map();
+        map.getMap(lat, lon, list);
+        $("#box").addClass("goUpForm");
+        $("#locationInput").addClass("goUpGroup");
+        $("#attractionInput").addClass("goUpGroup");
+    }
+
+    $(".resultBox").click(function(event) {
+        $(event.target).children("div").toggle();
+    })
+});
+>>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
