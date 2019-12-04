@@ -13,10 +13,14 @@ body {
 .title {
     text-align: center;
     font-size: 50px;
-    font-variant: small-caps;
-    margin-bottom: 15px;
+    font-family: 'Yellowtail', cursive;
+    color: aliceblue;
 }
 
+label {
+    font-family: 'Raleway', sans-serif;
+    color: aliceblue;
+}
 form label {
     font-weight: bold;
     font-size: 30px;
@@ -39,6 +43,7 @@ li img {
 
 .btn {
     font-size: 20px;
+    
 }
 
 
