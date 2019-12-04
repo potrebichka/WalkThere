@@ -18,7 +18,7 @@
                             <img src="./user.svg" alt="User" class="rounded-circle">
                             <span class="user-name"></span>
                         </span>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addContactModal">Your Places</button>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#savedListModal">Your Places</button>
                         <button type="button" class="btn btn-success" id="logout">Logout</button>
                     </div>
                 </header>
@@ -87,23 +87,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+                <div class="modal fade" id="savedListModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                                 <div class="modal-header">
-                                <h4 class="modal-title" id="addContactModalLabel">Saved Places</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="savedListModalLabel">Saved Places</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body" id="savedPlacesList">
 
                                 </div>
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+                <!-- <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="box" id="box">
                 <h1 class="title">
                     walk there

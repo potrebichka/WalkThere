@@ -114,12 +114,13 @@ $(function() {
     }
 
     function displayMap(lat, lon, list) {
-        $('.map').show();
-        map = new Map();
-        map.getMap(lat, lon, list);
-        $("#box").addClass("goUpForm");
-        $("#locationInput").addClass("goUpGroup");
-        $("#attractionInput").addClass("goUpGroup");
+      console.log($(".map"));
+      $('.map').show();
+      map = new Map();
+      map.getMap(lat, lon, list);
+      $("#box").addClass("goUpForm");
+      $("#locationInput").addClass("goUpGroup");
+      $("#attractionInput").addClass("goUpGroup");
     }
 
     // show/hide info about place
@@ -272,37 +273,40 @@ $(function() {
         }
         $(".addButton").show();
       });
-      //.child(user.uid).on('child_added', onChildAdd);
+      placesRef.child(user.uid).on('child_added', onChildAdd);
     } else {
       // No user is signed in.
       $('body').removeClass('auth-true').addClass('auth-false');
       $(".addButton").hide();
       //auth && placesRef.child(auth.uid).off('child_added', onChildAdd);
-      $('#contacts').html('');
+      $('#savedPlacesList').html('');
       auth = null;
     }
   });
 });
 
-  // function onChildAdd (snap) {
-  //   $('#contacts').append(contactHtmlFromObject(snap.key, snap.val()));
-  // }
+  function onChildAdd (snap) {
+    $('#savedPlacesList').append(contactHtmlFromObject(snap.key, snap.val()));
+  }
  
-  // //prepare contact object's HTML
-  // function contactHtmlFromObject(key, contact){
-  //   return '<div class="card contact" style="width: 18rem;" id="'+key+'">'
-  //     + '<div class="card-body">'
-  //       + '<h5 class="card-title">'+contact.name+'</h5>'
-  //       + '<h6 class="card-subtitle mb-2 text-muted">'+contact.email+'</h6>'
-  //       + '<p class="card-text" title="' + contact.location.zip+'">'
-  //         + contact.location.city + ', '
-  //         + contact.location.state
-  //       + '</p>'
-  //       // + '<a href="#" class="card-link">Card link</a>'
-  //       // + '<a href="#" class="card-link">Another link</a>'
-  //     + '</div>'
-  //   + '</div>';
-  // }
+  //prepare contact object's HTML
+  function contactHtmlFromObject(key, place){
+    return '<div class="card contact" id="'+key+'">'
+      + '<div class="card-body">'
+        + '<h5 class="card-title">'+place.name+'</h5>'
+         + '<h6 class="card-subtitle mb-2 text-muted">'+place.address+'</h6>'
+         + '<p class="card-text">'
+          + place.phone
+        + '</p>'
+        + '<p class="card-text">Rating: '
+          + place.rating
+        + '</p>'
+
+        // + '<a href="#" class="card-link">Card link</a>'
+        // + '<a href="#" class="card-link">Another link</a>'
+      + '</div>'
+    + '</div>';
+  }
 
   function spanText(textStr, textClasses) {
     var classNames = textClasses.map(c => 'text-'+c).join(' ');

@@ -121,8 +121,8 @@ header h1 {
   header + hr {
     margin: 10px 0;
   }
-  #contacts p, 
-  #contacts p.lead{
+  #places p, 
+  #places p.lead{
     margin: 0;
   }
   .userAuth {
@@ -134,11 +134,11 @@ header h1 {
     border-bottom: 0;
   }
   .card {
-    display: inline-block;
+    display: block;
     margin: 1em;
-    max-width: calc(25% - 2em);
+    max-width: calc(100% - 2em);
   }
-  #contacts {
+  #places {
     margin-left: -1em;
     margin-right: -1em;
     display: flex;
