@@ -234,7 +234,6 @@ $(function() {
     firebase.auth().signOut();
   });
 
-
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       auth = user;
@@ -251,8 +250,6 @@ $(function() {
         $(".addButton").show();
       });
       placesRef.child(user.uid).on('child_added', onChildAdd);
-
-
     } else {
       // No user is signed in.
       $('body').removeClass('auth-true').addClass('auth-false');
