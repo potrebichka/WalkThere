@@ -36,7 +36,6 @@ li {
 li img {
     width: 300px;
 }
-
 #results {
     margin: 10px;
     text-align: center;
@@ -45,7 +44,11 @@ li img {
 
 .btn {
     font-size: 20px;
+<<<<<<< HEAD
     margin: 15px;
+=======
+    
+>>>>>>> 80e49334d7182bd173767b7a5fc7d81c5eded142
 }
 
 
@@ -60,9 +63,11 @@ li img {
 }
 
 .map {
+    position: relative;
     height: 35%;
     width: 70%;
     left: 15%;
+<<<<<<< HEAD
     top: 20%;
     margin: 30px;
 }
@@ -71,6 +76,14 @@ li img {
     top: 0%;
     left: 5%;
     transform: translate(0%, 0%);
+=======
+    top: 50px;
+}
+
+.goUpForm {
+    position: relative;
+    transform: translate(-50%, 0%);
+>>>>>>> 80e49334d7182bd173767b7a5fc7d81c5eded142
     width: 100%;
 }
 
@@ -109,9 +122,67 @@ li img {
     display: none
 }
 
+
+
+/* authentification */
+header h1 {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  header + hr {
+    margin: 10px 0;
+  }
+  #contacts p, 
+  #contacts p.lead{
+    margin: 0;
+  }
+  .userAuth {
+    display: block;
+    margin: 20px 0 0;
+    float: right;
+  }
+  .modal-header:last-child{
+    border-bottom: 0;
+  }
+  .card {
+    display: inline-block;
+    margin: 1em;
+    max-width: calc(25% - 2em);
+  }
+  #contacts {
+    margin-left: -1em;
+    margin-right: -1em;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .user-info {
+    display: inline-block;
+    margin: 0 0.5em;
+  }
+  .user-info img{
+    display: inline-block;
+    max-width: 2em;
+  }
+  
+  .auth-true .authenticated,
+  .auth-false .unauthenticated {
+    display: block;
+  }
+  .auth-true .unauthenticated,
+  .auth-false .authenticated {
+    display: none;
+  }
+  
 #icon {
     position: fixed;
     left: 10px;
     top: 10px;
     border: 1px solid black;
+<<<<<<< HEAD
+=======
+}
+
+.addButton {
+  display: none;
+>>>>>>> 80e49334d7182bd173767b7a5fc7d81c5eded142
 }
