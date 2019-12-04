@@ -1,4 +1,4 @@
-
+  
 html, body {
     margin: 0;
     padding: 0;
@@ -44,11 +44,7 @@ li img {
 
 .btn {
     font-size: 20px;
-<<<<<<< HEAD
-    margin: 15px;
-=======
     
->>>>>>> 80e49334d7182bd173767b7a5fc7d81c5eded142
 }
 
 
@@ -59,7 +55,7 @@ li img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 35px;
+    padding: 34px;
 }
 
 .map {
@@ -67,23 +63,12 @@ li img {
     height: 35%;
     width: 70%;
     left: 15%;
-<<<<<<< HEAD
-    top: 20%;
-    margin: 30px;
-}
-
-.goUpForm {
-    top: 0%;
-    left: 5%;
-    transform: translate(0%, 0%);
-=======
     top: 50px;
 }
 
 .goUpForm {
     position: relative;
     transform: translate(-50%, 0%);
->>>>>>> 80e49334d7182bd173767b7a5fc7d81c5eded142
     width: 100%;
 }
 
@@ -125,6 +110,11 @@ li img {
 
 
 /* authentification */
+
+.control-label {
+    color: cornflowerblue;
+}
+
 header h1 {
     display: inline-block;
     margin: 10px 0;
@@ -178,11 +168,12 @@ header h1 {
     left: 10px;
     top: 10px;
     border: 1px solid black;
-<<<<<<< HEAD
-=======
 }
 
 .addButton {
   display: none;
->>>>>>> 80e49334d7182bd173767b7a5fc7d81c5eded142
+}
+
+#registerForm {
+    color: black;
 }

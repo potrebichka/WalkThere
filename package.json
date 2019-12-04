@@ -34,10 +34,7 @@
     "copy-webpack-plugin": "^5.0.5",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
-<<<<<<< HEAD
-=======
     "firebase": "^7.5.0",
->>>>>>> 80e49334d7182bd173767b7a5fc7d81c5eded142
     "get-google-fonts": "^1.2.1",
     "jquery": "^3.4.1",
     "load-google-maps-api": "^2.0.1",
