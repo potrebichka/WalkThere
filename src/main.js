@@ -159,6 +159,7 @@ $(function() {
             $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
             
             $('#messageModal').modal('hide');
+            $('.user-name').text(user.displayName);
           })
           .catch(function(error){
             console.log("Error creating user:", error);
@@ -227,21 +228,23 @@ $(function() {
   });
 
   firebase.auth().onAuthStateChanged(function(user) {
+    console.log(user, firebase.auth().currentUser);
     if (user) {
       auth = user;
       $('body').removeClass('auth-false').addClass('auth-true');
       usersRef.child(user.uid).once('value').then(function (data) {
         var info = data.val();
+        console.log(user.displayName);
         if(user.photoUrl) {
           $('.user-info img').show();
           $('.user-info img').attr('src', user.photoUrl);
           $('.user-info .user-name').hide();
         } else if(user.displayName) {
           $('.user-info img').hide();
-          $('.user-info').append('<span class="user-name">'+user.displayName+'</span>');
-        } else if(info.firstName) {
+          $('.user-name').text(user.displayName);
+        } else {
           $('.user-info img').hide();
-          $('.user-info').append('<span class="user-name">'+info.firstName+'</span>');
+          $('.user-name').text("User");
         }
       });
       contactsRef.child(user.uid).on('child_added', onChildAdd);
