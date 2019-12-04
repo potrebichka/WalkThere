@@ -22,19 +22,11 @@ form label {
     font-size: 30px;
 }
 
-<<<<<<< HEAD
-/* form h2 {
-    text-decoration: underline;
-    text-align: center;
-    margin-bottom: 20px;
-} */
-=======
 li {
     color: aliceblue;
     margin: 10px;
     cursor: pointer
 }
->>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
 
 li img {
     width: 300px;
@@ -46,24 +38,11 @@ li img {
     list-style-position: inside;
 }
 
-/* #findDoctorByIssueForm, #findDoctorByNameForm, #findDoctorBySpecialityForm {
-    display: none;
-    margin-top: 30px;
-    margin-bottom: 30px;
-} */
 
 .btn {
     font-size: 20px;
 }
 
-<<<<<<< HEAD
-/* ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    align-items: center;
-    justify-content: center;
-=======
 
 .box {
     background-color: rgba(118,108,108, 0.5);
@@ -72,6 +51,7 @@ li img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin: 45px 0 0 35%
 }
 
 .map {
@@ -79,7 +59,6 @@ li img {
     width: 70%;
     left: 15%;
     top: 20%;
->>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
 }
 
 .goUpForm {
@@ -104,20 +83,6 @@ li img {
     margin-top: 5%;
 }
 
-<<<<<<< HEAD
-#specialitiesList {
-    margin-bottom: 20px;
-} */
-
-#box {
-    background-color: rgba(118,108,108, 0.5);
-    margin: 0;
-    padding: 60px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-=======
 @media (max-width: 500px) {
     .map {
         top: 25%;
@@ -143,5 +108,4 @@ li img {
     left: 10px;
     top: 10px;
     border: 1px solid black;
->>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
 }

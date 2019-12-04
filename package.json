@@ -31,15 +31,13 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-<<<<<<< HEAD
-    "jquery": "^3.4.1",
-    "popper.js": "^1.15.0",
-=======
     "copy-webpack-plugin": "^5.0.5",
->>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
+    "get-google-fonts": "^1.2.1",
+    "jquery": "^3.4.1",
     "load-google-maps-api": "^2.0.1",
+    "popper.js": "^1.15.0",
     "yelp-fusion": "^3.0.0"
   }
 }
