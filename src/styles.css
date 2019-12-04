@@ -43,9 +43,9 @@ li img {
     list-style-position: inside;
 }
 
-button#buttonID {
+.btn {
     font-size: 20px;
-    margin: 11px 0 0 35%;
+    margin: 15px;
 }
 
 
@@ -64,6 +64,7 @@ button#buttonID {
     width: 70%;
     left: 15%;
     top: 20%;
+    margin: 30px;
 }
 
 .goUpForm {
