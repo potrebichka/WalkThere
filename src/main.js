@@ -11,13 +11,9 @@ $(function() {
 
     $("#findLocationForm").submit(function(event) {
         event.preventDefault();
-<<<<<<< HEAD
-        const location = $("#userLocationInput").val();
-=======
         const location = $("#userLocationInput").val();    
         const place = $("#userAttractionInput").val();
 
->>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
         if (!location) {
             if (navigator.geolocation) {
 
@@ -88,11 +84,6 @@ $(function() {
         </div>`
     }
 
-<<<<<<< HEAD
-  });
-
-// });
-=======
     function displayMap(lat, lon, list) {
         $('.map').show();
         map = new Map();
@@ -106,4 +97,3 @@ $(function() {
         $(event.target).children("div").toggle();
     })
 });
->>>>>>> 2bb12750247c1b7df205e9b054426c50726438b3
