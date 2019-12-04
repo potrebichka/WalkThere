@@ -16,6 +16,7 @@ $(function() {
         const place = $("#userAttractionInput").val();
 
         if (!location) {
+          //if input field is empty get current user location
             if (navigator.geolocation) {
 
                 navigator.geolocation.getCurrentPosition(function(position) {
@@ -30,6 +31,7 @@ $(function() {
                 display(lat, lon, place);
             }
         } else {
+          //get coords from user input
             (async() => {
                 try {
                     let coordinatesFromLocation = new CoordinatesFromAddress();
@@ -52,7 +54,6 @@ $(function() {
         getListOfAttractions(lat,lon,place).then(function(response) {
             displayList(response);
             displayMap(lat, lon, response);
-
         });
     }
 
@@ -73,6 +74,9 @@ $(function() {
             const el = list[i];
             $("#results").append(`<li><button class='btn btn-secondary'>${displayElementOfList(el)}</button></li>`);
         }
+        $(".addButton").click(function(event) {
+          //console.log("clicked", event.target.parent());
+        })
     }
 
     function displayElementOfList(element) {
@@ -82,6 +86,8 @@ $(function() {
             Phone: ${element.phone}<br>
             Rating: ${element.rating}<br>
             <img src=${element.image} alt=${element.name}>
+            <br>
+            <button class="btn btn-info addButton">Add place to your list</button>
         </div>`;
     }
 
@@ -94,6 +100,7 @@ $(function() {
         $("#attractionInput").addClass("goUpGroup");
     }
 
+    // show/hide info about place
     $(".resultBox").click(function(event) {
         $(event.target).children("div").toggle();
     });
@@ -203,29 +210,29 @@ $(function() {
     firebase.auth().signOut()
   });
 
-  //save contact
-  $('#contactForm').on('submit', function( event ) {  
-    event.preventDefault();
-    if( auth != null ){
-      if( $('#name').val() != '' || $('#email').val() != '' ){
-        contactsRef.child(auth.uid)
-          .push({
-            name: $('#name').val(),
-            email: $('#email').val(),
-            location: {
-              city: $('#city').val(),
-              state: $('#state').val(),
-              zip: $('#zip').val()
-            }
-          })
-          document.contactForm.reset();
-      } else {
-        alert('Please fill at-lease name or email!');
-      }
-    } else {
-      //inform user to login
-    }
-  });
+  // //save contact
+  // $('#contactForm').on('submit', function( event ) {  
+  //   event.preventDefault();
+  //   if( auth != null ){
+  //     if( $('#name').val() != '' || $('#email').val() != '' ){
+  //       contactsRef.child(auth.uid)
+  //         .push({
+  //           name: $('#name').val(),
+  //           email: $('#email').val(),
+  //           location: {
+  //             city: $('#city').val(),
+  //             state: $('#state').val(),
+  //             zip: $('#zip').val()
+  //           }
+  //         })
+  //         document.contactForm.reset();
+  //     } else {
+  //       alert('Please fill at-lease name or email!');
+  //     }
+  //   } else {
+  //     //inform user to login
+  //   }
+  // });
 
   firebase.auth().onAuthStateChanged(function(user) {
     console.log(user, firebase.auth().currentUser);
@@ -234,51 +241,48 @@ $(function() {
       $('body').removeClass('auth-false').addClass('auth-true');
       usersRef.child(user.uid).once('value').then(function (data) {
         var info = data.val();
-        console.log(user.displayName);
-        if(user.photoUrl) {
-          $('.user-info img').show();
-          $('.user-info img').attr('src', user.photoUrl);
-          $('.user-info .user-name').hide();
-        } else if(user.displayName) {
+        if(user.displayName) {
           $('.user-info img').hide();
           $('.user-name').text(user.displayName);
         } else {
           $('.user-info img').hide();
           $('.user-name').text("User");
         }
+        $(".addButton").show();
       });
-      contactsRef.child(user.uid).on('child_added', onChildAdd);
+      //.child(user.uid).on('child_added', onChildAdd);
     } else {
       // No user is signed in.
       $('body').removeClass('auth-true').addClass('auth-false');
-      auth && contactsRef.child(auth.uid).off('child_added', onChildAdd);
+      $(".addButton").hide();
+      //auth && contactsRef.child(auth.uid).off('child_added', onChildAdd);
       $('#contacts').html('');
       auth = null;
     }
   });
 });
 
-function onChildAdd (snap) {
-  $('#contacts').append(contactHtmlFromObject(snap.key, snap.val()));
-}
+  // function onChildAdd (snap) {
+  //   $('#contacts').append(contactHtmlFromObject(snap.key, snap.val()));
+  // }
  
-//prepare contact object's HTML
-function contactHtmlFromObject(key, contact){
-  return '<div class="card contact" style="width: 18rem;" id="'+key+'">'
-    + '<div class="card-body">'
-      + '<h5 class="card-title">'+contact.name+'</h5>'
-      + '<h6 class="card-subtitle mb-2 text-muted">'+contact.email+'</h6>'
-      + '<p class="card-text" title="' + contact.location.zip+'">'
-        + contact.location.city + ', '
-        + contact.location.state
-      + '</p>'
-      // + '<a href="#" class="card-link">Card link</a>'
-      // + '<a href="#" class="card-link">Another link</a>'
-    + '</div>'
-  + '</div>';
-}
+  // //prepare contact object's HTML
+  // function contactHtmlFromObject(key, contact){
+  //   return '<div class="card contact" style="width: 18rem;" id="'+key+'">'
+  //     + '<div class="card-body">'
+  //       + '<h5 class="card-title">'+contact.name+'</h5>'
+  //       + '<h6 class="card-subtitle mb-2 text-muted">'+contact.email+'</h6>'
+  //       + '<p class="card-text" title="' + contact.location.zip+'">'
+  //         + contact.location.city + ', '
+  //         + contact.location.state
+  //       + '</p>'
+  //       // + '<a href="#" class="card-link">Card link</a>'
+  //       // + '<a href="#" class="card-link">Another link</a>'
+  //     + '</div>'
+  //   + '</div>';
+  // }
 
-function spanText(textStr, textClasses) {
-  var classNames = textClasses.map(c => 'text-'+c).join(' ');
-  return '<span class="'+classNames+'">'+ textStr + '</span>';
+  function spanText(textStr, textClasses) {
+    var classNames = textClasses.map(c => 'text-'+c).join(' ');
+    return '<span class="'+classNames+'">'+ textStr + '</span>';
 }

@@ -157,3 +157,7 @@ header h1 {
     top: 10px;
     border: 1px solid black;
 }
+
+.addButton {
+  display: none;
+}
