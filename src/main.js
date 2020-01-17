@@ -6,8 +6,6 @@ import { CoordinatesFromAddress} from './coordinatesFromLocation';
 import { Map } from './googleMaps';
 import {Attractions} from './yelp';
 import firebase from 'firebase';
-import '../node_modules/materialize-css/dist/css/materialize.min.css';
-import '../node_modules/materialize-css/dist/js/materialize.min.js';
 
 $(function() {
     let lat, lon, map;
@@ -54,6 +52,7 @@ $(function() {
     
     function display(lat, lon, place) {
         getListOfAttractions(lat,lon,place).then(function(response) {
+          console.log(lat,lon);
             displayList(response);
             $('.addButton').hide();
             displayMap(lat, lon, response);
@@ -72,8 +71,8 @@ $(function() {
 
     function displayList(list) {
         $(".resultBox").show();
-        $(".card-content").empty();
-        $(".card-image").empty();
+        $(".card2-content").empty();
+        $(".card2-image").empty();
         let labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         let labelIndex = 0;
         for (let i=0; i< list.length; i++) {
@@ -81,14 +80,14 @@ $(function() {
             $(".row").show();
             $("#row").append(`
             <div class="place" id=${i}>
-              <div class="card results">
-                <div class="card-image">
+              <div class="card card2 results">
+                <div class="card-image card2-image">
                   <img src="${el.image}" width="320px" height="270px">
-                  <span class="card-title">${el.name}</span>
-                  <a class="btn-floating halfway-fab waves-effect waves-light red addButton"><i class="material-icons">add</i></a>
+                  <span class="card-title card2-title">${el.name}</span>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red addButton"><i class="material-icons">+</i></a>
                   <a class="btn-floating halfway-fab waves-effect waves-light blue left top"><i class="material-icons">${labels[labelIndex++ % labels.length]}</i></a>
                 </div>
-                <div class="card-text content">
+                <div class="card-text card2-text content">
                   ${displayElementOfList(el)}
                 </div> 
                </div>

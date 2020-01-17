@@ -32,6 +32,7 @@ export class Attractions {
             }).catch(e => {
                 console.log(e);
             });
+            console.log(resultArray);
             return resultArray;
         } catch(error) {
             console.error("There was an error handling your request: " + error.message);
