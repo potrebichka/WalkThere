@@ -1,6 +1,6 @@
 # _Walk There_
 
-#### _Version 12/02/2019_
+#### _Version 01/16/2019_
 
 #### By _**Nina Potrebich, Sharon Lee, Adilet Momunaliev, Will Quanstrom**_
 
@@ -28,13 +28,14 @@ API_KEY=YOUR_KEY( There are three APIs one for google maps, for Yelp API, and fo
 ```
 After cloning the project:
 1. npm install
-2. npm install yelp-fusion --save
-3. npm install --save load-google-maps-api
-4. npm install --save firebase
-5. 1 Step: open => "node_module" folder in your project; 2 Step: drop down list and open => "yelpfusion" folder; 3 Step: open "lib" folder; 4 Step: open file        "index.js"; 5 Step: modify each original url 'https://api.yelp.com/v3/events/featured' with new one 'https://cors-anywhere.herokuapp.com/api.yelp.com/v3/events/featured'
+2. Do next steps:
+* Open => "node_module" folder in your project
+* Drop down list and open => "yelpfusion" folder
+* Open "lib" folder
+* Open file "index.js"
+* Modify each original url 'https://api.yelp.com/v3/events/featured' with new one 'https://cors-anywhere.herokuapp.com/api.yelp.com/v3/events/featured'
 
-Once the dependencies are installed (it will take a few minutes), your project is ready to go.
-
+3. Your project is ready to go:
 ```
 npm run build
 ```
@@ -50,11 +51,6 @@ npm run build
 | User can choose to create and account and authenticate when using app  | LOGIN - email: xxxx@gmail.com -- password: password1 | User will create reusable account  |
 | User can add places to their accounts history for later reference  | User clicks on 'add place' which corresponds with search result they want to add  | Place is added in database corresponding to user  |
 | User can access history to see their previously added places | User adds 'Koh Thai' to their places | At another date, after user authenticates, they can access "My Places" and find 'Koh Thai'|
-* A user is able to either use their current location or input an address.
-* If user left field empty the program will get data for their current location. (Allow your browser to use your location).
-* The program wil display a map with a marker on the user's location.
-* The user will able to choose from a variety of attractions (bars, restaurants, etc.).
-* The program will display results within walking distance for the user based on their location and chosen attraction.
 
 
 ## Technologies Used
