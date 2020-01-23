@@ -54,7 +54,13 @@ $(function() {
         getListOfAttractions(lat,lon,place).then(function(response) {
           console.log(lat,lon);
             displayList(response);
-            $('.addButton').hide();
+            if (auth == null)
+            {
+              $('.addButton').hide();
+            }
+            else{
+              $('.addButton').show();
+            }
             displayMap(lat, lon, response);
         });
     }
