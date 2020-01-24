@@ -185,7 +185,7 @@ padding: 35px;
 }
 
 #userLocationInput {
-  color: white
+  color: black;
 }
 
 #userLocationInput::placeholder {

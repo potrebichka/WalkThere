@@ -53,6 +53,7 @@ $(function() {
     function display(lat, lon, place) {
         getListOfAttractions(lat,lon,place).then(function(response) {
           console.log(lat,lon);
+          $("#row").empty();
             displayList(response);
             if (auth == null)
             {
