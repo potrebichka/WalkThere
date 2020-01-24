@@ -130,10 +130,44 @@ $(function() {
     }
 
     function displayElementOfList(element) {
+        let rating = "";
+        switch(element.rating)
+        {
+          case 0.5:
+            rating = "<i class='fa fa-star-half-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 1:
+            rating = "<i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 1.5:
+            rating = "<i class='fa fa-star'></i><i class='fa fa-star-half-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 2:
+            rating = "<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 2.5:
+            rating = "<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-half-o'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 3:
+            rating += "<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 3.5:
+            rating += "<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-half-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 4:
+            rating += "<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 4.5:
+            rating += "<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-half-o'></i><i class='fa fa-star-o'></i>";
+            break;
+          case 5:
+            rating += "<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i>";
+            break;
+        }
         return `
             Address: ${element.address}<br>
             Phone: ${element.phone}<br>
-            Rating: ${element.rating}<br>
+            Rating: ${element.rating} ${rating}<br>
            `;
     }
 
