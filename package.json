@@ -9,7 +9,7 @@
     "lint": "eslint src/*.js",
     "test": "jest",
     "debug": "node --inspect node_modules/.bin/jest --runInBand",
-    "heroku-prebuild": "npm install --dev",
+    "heroku-prebuild": "npm install --dev"
   },
   "keywords": [],
   "author": "",
