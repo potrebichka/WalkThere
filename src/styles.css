@@ -422,3 +422,10 @@ button.btn-floating {
 .top {
   transform: translate(-35px, -270px)
   }
+
+  .user-name {
+    font-weight: 600;
+    font-size: 30px;
+    color: black;
+    background-color: white;
+  }
