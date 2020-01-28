@@ -21,21 +21,26 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-Create a `.env` file in the root of your project and insert your key/value pairs in the following format of `KEY=VALUE`:
-
+1. Create a `.env` file in the root of your project and insert your key/value pairs in the following format of `KEY=VALUE`:
 ```sh
 API_KEY=YOUR_KEY( There are three APIs one for google maps, for Yelp API, and for opencagedata.)
 ```
-After cloning the project:
-1. npm install
-2. Do next steps:
+2. Clone the project using link:
+```
+git clone repo_name
+```
+3. After cloning the project:
+```
+npm install
+```
+4. Do next steps:
 * Open => "node_module" folder in your project
 * Drop down list and open => "yelpfusion" folder
 * Open "lib" folder
 * Open file "index.js"
 * Modify each original url 'https://api.yelp.com/v3/events/featured' with new one 'https://cors-anywhere.herokuapp.com/api.yelp.com/v3/events/featured'
 
-3. Your project is ready to go:
+5. Your project is ready to go:
 ```
 npm run build
 ```
@@ -52,6 +57,9 @@ npm run build
 | User can add places to their accounts history for later reference  | User clicks on 'add place' which corresponds with search result they want to add  | Place is added in database corresponding to user  |
 | User can access history to see their previously added places | User adds 'Koh Thai' to their places | At another date, after user authenticates, they can access "My Places" and find 'Koh Thai'|
 
+## Screenshots
+
+![Start page. Not Login.](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-54-56.png)
 
 ## Technologies Used
 
