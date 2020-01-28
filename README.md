@@ -59,7 +59,29 @@ npm run build
 
 ## Screenshots
 
+Start page. Not login.
 ![Start page. Not Login.](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-54-56.png)
+
+Looking for something somewhere. No login.
+![Looking for something somewhere. No login](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-55-56.png)
+
+Display list of results. No login.
+![Display list of results. No login.](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-56-25.png/)
+
+Login form
+![Login form](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-57-02.png)
+
+Page with login.
+![Page with login](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-57-47.png)
+
+Saved Places
+![Saved Places](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-58-04.png)
+
+Display list of results. With login.
+![Display list of results with login](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-58-30.png)
+
+Register form
+![Register form](https://github.com/potrebichka/WalkThere/blob/master/src/img/2020-01-27_15-58-56.png)
 
 ## Technologies Used
 
