@@ -39,7 +39,7 @@
     "firebase": "^7.5.0",
     "font-awesome": "^4.7.0",
     "get-google-fonts": "^1.2.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "load-google-maps-api": "^2.0.1",
     "mysql": "^2.17.1",
     "popper.js": "^1.15.0",
